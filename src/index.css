@@ -111,3 +111,15 @@ body {
   letter-spacing: -0.016rem;
   font-size: 0.875rem;
 }
+
+/* Dark Light Theme Styles */
+
+:root[data-theme="light"] {
+  --bg-color: var(--clr-gray-50);
+  --header-gradient: var(--gradient-1);
+
+  --todo-bg-color: var(--clr-white);
+  --text-color: var(--clr-navy-850);
+  --checked-text-color: var(--clr-gray-300);
+  --unchecked-checkbox-color: var(--clr-purple-300);
+}

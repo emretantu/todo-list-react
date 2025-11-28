@@ -31,13 +31,13 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  --size: 20px;
-  --border: 1px;
+  --size: 1.25rem;
+  --border: 0.07rem;
   position: relative;
   width: var(--size);
   height: var(--size);
   border-radius: 100%;
-  background-color: hsl(var(--clr-purple-300));
+  background-color: hsl(var(--unchecked-checkbox-color));
 }
 
 .customCheckbox::before {
@@ -48,7 +48,7 @@ ul {
   width: calc(var(--size) - calc(var(--border) * 2));
   aspect-ratio: 1/1;
   border-radius: 100%;
-  background-color: white;
+  background-color: hsl(var(--todo-bg-color));
 }
 
 .todoItem:hover .customCheckbox, .customCheckbox.done {
@@ -60,25 +60,22 @@ ul {
 }
 
 .checkIcon {
-  width: 11px;
-  padding-left: 1px;
-  padding-top: 1px;
+  width: 0.7rem;
+  padding-left: 0.07rem;
+  padding-top: 0.07rem;
 }
 
 .crossIcon {
-  width: 12px;
-  height: 12px;
+  width: 0.75rem;
+  height: 0.75rem;
 }
 
 .todoText {
-  font-size: 12px;
-  color: hsl(var(--clr-navy-850));
+  font-size: 0.75rem;
+  color: hsl(var(--text-color));
 }
 
 .todoText.done {
   text-decoration: line-through;
-  color: hsl(var(--clr-gray-300));
+  color: hsl(var(--checked-text-color));
 }
-
-/* MAKE IT COMPATIBLE WITH DARK-LIGHT THEMES */
-/* PX -> REM */
