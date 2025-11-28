@@ -9,12 +9,19 @@ const TodoList = () => {
     {todoText: "Jog around the park 3x", isDone: false}
   ])
 
-  const handleClick = (index) => {
+  const handleCheckClick = (id) => {
     setTodos(prevTodos =>
-      prevTodos.map((todo, i) =>
-        i === index ? { ...todo, isDone: !todo.isDone } : todo
+      prevTodos.map((todo, index) =>
+        index === id ? { ...todo, isDone: !todo.isDone } : todo
       )
     )
+  }
+
+  const handleDeleteClick = (id) => {
+    setTodos(prevTodos => {
+      prevTodos.splice(id, 1);
+      return [...prevTodos];
+    })
   }
 
   return (
@@ -31,7 +38,8 @@ const TodoList = () => {
                 id={index}
                 todoText={todo.todoText}
                 isDone={todo.isDone}
-                onClick={handleClick}
+                onCheckClick={handleCheckClick}
+                onDeleteClick={handleDeleteClick}
               />
             )
           }
