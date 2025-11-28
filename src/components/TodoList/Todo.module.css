@@ -1,0 +1,84 @@
+ul {
+  padding: 0;
+  margin: var(--spacing-200);
+}
+
+.todoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-200);
+}
+
+.todoItem * {
+  cursor: pointer;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-200);
+}
+
+.todoItem input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.customCheckbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --size: 20px;
+  --border: 1px;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 100%;
+  background-color: hsl(var(--clr-purple-300));
+}
+
+.customCheckbox::before {
+  content: "";
+  position: absolute;
+  top: var(--border);
+  left: var(--border);
+  width: calc(var(--size) - calc(var(--border) * 2));
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  background-color: white;
+}
+
+.todoItem:hover .customCheckbox, .customCheckbox.done {
+  background-image: var(--gradient-1);
+}
+
+.customCheckbox.done::before {
+  display: none;
+}
+
+.checkIcon {
+  width: 11px;
+  padding-left: 1px;
+  padding-top: 1px;
+}
+
+.crossIcon {
+  width: 12px;
+  height: 12px;
+}
+
+.todoText {
+  font-size: 12px;
+  color: hsl(var(--clr-navy-850));
+}
+
+.todoText.done {
+  text-decoration: line-through;
+  color: hsl(var(--clr-gray-300));
+}
+
+/* MAKE IT COMPATIBLE WITH DARK-LIGHT THEMES */
+/* PX -> REM */

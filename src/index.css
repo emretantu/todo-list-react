@@ -106,8 +106,8 @@ textarea:not([rows]) {
 }
 
 body {
-  font-family: "Josephin" sans-serif;
+  font-family: "Josephin", sans-serif;
   font-weight: normal;
-  letter-spacing: 0.016rem;
+  letter-spacing: -0.016rem;
   font-size: 0.875rem;
 }

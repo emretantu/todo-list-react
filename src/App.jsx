@@ -1,6 +1,8 @@
+import TodoList from "./components/TodoList/TodoList";
+
 const App = () => {
   return (
-    <h1>App</h1>
+    <TodoList />
   )
 }
 
