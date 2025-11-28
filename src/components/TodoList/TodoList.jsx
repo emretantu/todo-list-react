@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./TodoList.module.css"
 import List from "./List";
+import NewTodo from "./NewTodo";
 
 const TodoList = () => {
 
@@ -28,7 +29,7 @@ const TodoList = () => {
   return (
     <article className={styles.todoList}>
       <section className={styles.newTodoContainer}>
-        
+        <NewTodo />
       </section>
       <section className={styles.todoListContainer}>
         <List todos={todos} onCheckClick={handleCheckClick} onDeleteClick={handleDeleteClick} />

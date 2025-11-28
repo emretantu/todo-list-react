@@ -22,37 +22,7 @@
   opacity: 0;
 }
 
-.customCheckbox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  --size: 1.25rem;
-  --border: 0.07rem;
-  position: relative;
-  width: var(--size);
-  height: var(--size);
-  border-radius: 100%;
-  background-color: hsl(var(--unchecked-checkbox-color));
-}
 
-.customCheckbox::before {
-  content: "";
-  position: absolute;
-  top: var(--border);
-  left: var(--border);
-  width: calc(var(--size) - calc(var(--border) * 2));
-  aspect-ratio: 1/1;
-  border-radius: 100%;
-  background-color: hsl(var(--todo-bg-color));
-}
-
-.todoItem:hover .customCheckbox, .customCheckbox.done {
-  background-image: var(--gradient-1);
-}
-
-.customCheckbox.done::before {
-  display: none;
-}
 
 .checkIcon {
   width: 0.7rem;
