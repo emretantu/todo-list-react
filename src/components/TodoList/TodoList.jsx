@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Todo from "./Todo";
+import styles from "./TodoList.module.css"
+import List from "./List";
 
 const TodoList = () => {
 
@@ -25,25 +26,12 @@ const TodoList = () => {
   }
 
   return (
-    <article>
-      <section className="newTodo">
+    <article className={styles.todoList}>
+      <section className={styles.newTodoContainer}>
         
       </section>
-      <section className="todoList">
-        <ul>
-          {
-            todos.map(
-              (todo, index) => <Todo 
-                key={index}
-                id={index}
-                todoText={todo.todoText}
-                isDone={todo.isDone}
-                onCheckClick={handleCheckClick}
-                onDeleteClick={handleDeleteClick}
-              />
-            )
-          }
-        </ul>
+      <section className={styles.todoListContainer}>
+        <List todos={todos} onCheckClick={handleCheckClick} onDeleteClick={handleDeleteClick} />
       </section>
     </article>
   )
