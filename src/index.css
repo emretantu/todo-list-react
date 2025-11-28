@@ -58,3 +58,56 @@ textarea:not([rows]) {
 :target {
   scroll-margin-block: 5ex;
 }
+
+/* Design System */
+
+@font-face {
+  font-family: "Josephin";
+  src: url("assets/fonts/JosefinSans-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Josephin";
+  src: url("assets/fonts/JosefinSans-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --clr-white: 0 100% 100%;
+  --clr-black: 0 0% 0%;
+  --clr-purple-800: 237 14% 26%;
+  --clr-purple-700: 233 14% 35%;
+  --clr-purple-600: 235 16% 43%;
+  --clr-purple-300: 234 39% 85%;
+  --clr-purple-100: 236 33% 92%;
+  --clr-gray-600: 236 9% 61%;
+  --clr-gray-300: 233 11% 84%;
+  --clr-gray-50: 0 0% 98%;
+  --clr-navy-950: 235 21% 11%;
+  --clr-navy-900: 235 24% 19%;
+  --clr-navy-850: 235 19% 35%;
+  --clr-blue-500: 220 98% 61%;
+
+  --gradient-1: linear-gradient(to right bottom, hsl(192 100% 67%), hsl(280 87% 65%));
+  --gradient-2: linear-gradient(to right bottom, hsl(254 85% 40%), hsl(307 64% 39%));
+
+  --spacing-0: 0;
+  --spacing-100: 0.5rem;
+  --spacing-200: 1rem;
+  --spacing-300: 1.5rem;
+  --spacing-400: 2rem;
+  --spacing-500: 2.5rem;
+  --spacing-600: 3rem;
+}
+
+body {
+  font-family: "Josephin" sans-serif;
+  font-weight: normal;
+  letter-spacing: 0.016rem;
+  font-size: 0.875rem;
+}
