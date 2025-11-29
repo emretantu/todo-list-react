@@ -103,6 +103,8 @@ textarea:not([rows]) {
   --spacing-400: 2rem;
   --spacing-500: 2.5rem;
   --spacing-600: 3rem;
+
+  --std-border-radius: 0.32rem;
 }
 
 body {
@@ -129,4 +131,6 @@ body {
   --footer-text-color: var(--clr-gray-600);
   --footer-text-hover-color: var(--clr-navy-850);
   --footer-text-active-color: var(--clr-blue-500);
+
+  --shadow: 0 2rem 3rem hsl(var(--clr-purple-300) / 0.5);
 }

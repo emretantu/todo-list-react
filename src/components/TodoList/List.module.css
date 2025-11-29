@@ -1,3 +1,10 @@
+.listContainer {
+  background-color: hsl(var(--todo-bg-color));
+  border-radius: var(--std-border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
 .list {
   padding: 0;
 }

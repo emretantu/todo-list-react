@@ -4,6 +4,10 @@
   gap: var(--spacing-200);
   padding: var(--spacing-200);
   cursor: text;
+  background-color: hsl(var(--todo-bg-color));
+  border-radius: var(--std-border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
 }
 
 .newTodo > label {
@@ -15,6 +19,11 @@
   outline: none;
   padding: 0.1rem 0 0 0;
   flex-grow: 1;
+  background-color: transparent;
+
+  color: hsl(var(--text-color));
+  caret-color: hsl(var(--clr-blue-500));
+
   font-family: inherit; /* Default */
   font-weight: inherit;
   letter-spacing: inherit;

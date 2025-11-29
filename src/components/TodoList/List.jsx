@@ -4,7 +4,7 @@ import ListFooter from "./ListFooter";
 
 const List = ({ todos, onCheckClick, onDeleteClick, onClearCompleted }) => {
   return (
-    <>
+    <div className={styles.listContainer}>
       <ul className={styles.list}>
         {
           todos.map(
@@ -21,7 +21,7 @@ const List = ({ todos, onCheckClick, onDeleteClick, onClearCompleted }) => {
         }
       </ul>
       <ListFooter onClearCompleted={onClearCompleted} todos={todos} />
-    </>
+    </div>
   )
 }
 
