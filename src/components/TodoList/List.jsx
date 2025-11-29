@@ -6,7 +6,8 @@ const List = ({ todos, onCheckClick, onDeleteClick }) => {
     <ul className={styles.list}>
       {
         todos.map(
-          (todo, index) => <Todo 
+          (todo, index) => <>
+          <Todo 
             key={index}
             id={index}
             todoText={todo.todoText}
@@ -14,6 +15,8 @@ const List = ({ todos, onCheckClick, onDeleteClick }) => {
             onCheckClick={onCheckClick}
             onDeleteClick={onDeleteClick}
           />
+          <hr />
+          </>
         )
       }
     </ul>

@@ -1,3 +1,8 @@
 .list {
   padding: 0;
 }
+
+.list hr {
+  border: none;
+  border-bottom: 1px solid hsl(var(--list-divider-color));
+}

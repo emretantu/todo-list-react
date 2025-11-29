@@ -124,6 +124,8 @@ body {
   --checked-text-color: var(--clr-gray-300);
   --unchecked-checkbox-color: var(--clr-purple-300);
 
+  --list-divider-color: var(--clr-purple-300);
+
   --footer-text-color: var(--clr-gray-600);
   --footer-text-hover-color: var(--clr-navy-850);
   --footer-text-active-color: var(--clr-blue-500);
