@@ -7,7 +7,7 @@ const ListFooter = ({ onClearCompleted, todos, children }) => {
   return (
     <div className={styles.listFooter}>
       <p>
-        {leftItemsCount} Items Left
+        {leftItemsCount > 0 ? leftItemsCount + " Items Left" : "You're All Done"}
       </p>
       {children}
       <a className={styles.clearButton} onClick={onClearCompleted}>
