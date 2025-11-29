@@ -1,0 +1,23 @@
+.newTodo {
+  display: flex;
+  align-items: stretch;
+  gap: var(--spacing-200);
+  padding: var(--spacing-200);
+  cursor: text;
+}
+
+.newTodo > label {
+  cursor: inherit;
+}
+
+.newTodoInput {
+  border: none;
+  outline: none;
+  padding: 0.1rem 0 0 0;
+  flex-grow: 1;
+  font-family: inherit; /* Default */
+  font-weight: inherit;
+  letter-spacing: inherit;
+  font-size: 0.75rem;
+  line-height: 1;
+}

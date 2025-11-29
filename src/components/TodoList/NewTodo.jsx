@@ -1,9 +1,51 @@
+import { useRef, useState } from "react";
 import styles from "./NewTodo.module.css";
+import StylishCheckbox from "./StylishCheckbox";
 
-const NewTodo = () => {
+const NewTodo = ({ onAddTodo }) => {
+
+  const refInput = useRef();
+
+  const [todoText, setTodoText] = useState("");
+
+  const handleChange = (e) => {
+    setTodoText(e.target.value);
+  }
+
+  const handleKeyDown = (e) => {
+    if(e.key === "Enter") {
+      onAddTodo(todoText);
+      setTodoText("");
+    }
+  }
+
+  const handleClick = () => {
+    refInput.current.focus();
+  }
+
   return (
-    <div>NewTodo</div>
+    <div className={styles.newTodo} onClick={handleClick}>
+      <label htmlFor="newTodoInput">
+        <StylishCheckbox isDone={false} />
+      </label>
+      <input
+        type="text"
+        name="newTodoInput"
+        id="newTodoInput"
+        className={styles.newTodoInput}
+        placeholder="Create a new todo..."
+        value={todoText}
+        onChange={(e) => handleChange(e)}
+        onKeyDown={(e) => handleKeyDown(e)}
+        ref={refInput}
+        autoFocus
+      />
+    </div>
   )
+
 }
 
 export default NewTodo
+
+
+// Focus input when click entire area.

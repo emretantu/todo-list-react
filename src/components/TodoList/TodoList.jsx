@@ -11,6 +11,11 @@ const TodoList = () => {
     {todoText: "Jog around the park 3x", isDone: false}
   ])
 
+  const handleAddTodo = (todoText) => {
+    setTodos(prevTodos => [...prevTodos, {todoText: todoText, isDone: false}])
+    console.log(todos);
+  }
+
   const handleCheckClick = (id) => {
     setTodos(prevTodos =>
       prevTodos.map((todo, index) =>
@@ -20,16 +25,13 @@ const TodoList = () => {
   }
 
   const handleDeleteClick = (id) => {
-    setTodos(prevTodos => {
-      prevTodos.splice(id, 1);
-      return [...prevTodos];
-    })
+    setTodos(prevTodos => prevTodos.filter((_, index) => index !== id));
   }
 
   return (
     <article className={styles.todoList}>
       <section className={styles.newTodoContainer}>
-        <NewTodo />
+        <NewTodo onAddTodo={handleAddTodo} />
       </section>
       <section className={styles.todoListContainer}>
         <List todos={todos} onCheckClick={handleCheckClick} onDeleteClick={handleDeleteClick} />
