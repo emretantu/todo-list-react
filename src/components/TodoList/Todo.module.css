@@ -22,8 +22,6 @@
   opacity: 0;
 }
 
-
-
 .checkIcon {
   width: 0.7rem;
   padding-left: 0.07rem;
@@ -43,4 +41,9 @@
 .todoText.done {
   text-decoration: line-through;
   color: hsl(var(--checked-text-color));
+}
+
+.divider {
+  border: none;
+  border-bottom: 1px solid hsl(var(--list-divider-color));
 }
