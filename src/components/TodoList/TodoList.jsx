@@ -2,7 +2,6 @@ import { useState } from "react";
 import styles from "./TodoList.module.css"
 import List from "./List";
 import NewTodo from "./NewTodo";
-import ListFooter from "./ListFooter";
 
 const TodoList = () => {
 
@@ -39,8 +38,7 @@ const TodoList = () => {
         <NewTodo onAddTodo={handleAddTodo} />
       </section>
       <section className={styles.listContainer}>
-        <List todos={todos} onCheckClick={handleCheckClick} onDeleteClick={handleDeleteClick} />
-        <ListFooter onClearCompleted={handleClearCompleted} todos={todos} />
+        <List todos={todos} onCheckClick={handleCheckClick} onDeleteClick={handleDeleteClick} onClearCompleted={handleClearCompleted} />
       </section>
     </article>
   )
