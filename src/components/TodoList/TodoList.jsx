@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./TodoList.module.css"
 import List from "./List";
 import NewTodo from "./NewTodo";
+import ListFooter from "./ListFooter";
 
 const TodoList = () => {
 
@@ -28,13 +29,18 @@ const TodoList = () => {
     setTodos(prevTodos => prevTodos.filter((_, index) => index !== id));
   }
 
+  const handleClearCompleted = () => {
+    setTodos(prevTodos => prevTodos.filter(todo => todo.isDone === false))
+  }
+
   return (
     <article className={styles.todoList}>
       <section className={styles.newTodoContainer}>
         <NewTodo onAddTodo={handleAddTodo} />
       </section>
-      <section className={styles.todoListContainer}>
+      <section className={styles.listContainer}>
         <List todos={todos} onCheckClick={handleCheckClick} onDeleteClick={handleDeleteClick} />
+        <ListFooter onClearCompleted={handleClearCompleted} todos={todos} />
       </section>
     </article>
   )

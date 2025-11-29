@@ -1,0 +1,22 @@
+.listFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-200);
+
+  font-size: 0.75rem;
+  color: hsl(var(--footer-text-color));
+  cursor: default;
+}
+
+.clearButton {
+  cursor: pointer;
+}
+
+.clearButton:hover {
+  color: hsl(var(--footer-text-hover-color))
+}
+
+.clearButton:active {
+  color: hsl(var(--footer-text-active-color))
+}
