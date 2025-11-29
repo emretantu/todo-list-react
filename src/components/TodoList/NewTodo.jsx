@@ -7,6 +7,7 @@ const NewTodo = ({ onAddTodo }) => {
   const refInput = useRef();
 
   const [todoText, setTodoText] = useState("");
+  const [isFocused, setIsFocused] = useState(false);
 
   const handleChange = (e) => {
     setTodoText(e.target.value);
@@ -26,7 +27,7 @@ const NewTodo = ({ onAddTodo }) => {
   return (
     <div className={styles.newTodo} onClick={handleClick}>
       <label htmlFor="newTodoInput">
-        <StylishCheckbox isDone={false} />
+        <StylishCheckbox isDone={false} isHovered={isFocused} />
       </label>
       <input
         type="text"
@@ -38,6 +39,8 @@ const NewTodo = ({ onAddTodo }) => {
         onChange={(e) => handleChange(e)}
         onKeyDown={(e) => handleKeyDown(e)}
         ref={refInput}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
         autoFocus
       />
     </div>

@@ -22,7 +22,7 @@
   background-color: hsl(var(--todo-bg-color));
 }
 
-.todoItem:hover .customCheckbox, .customCheckbox.done {
+.hovered, .done {
   background-image: var(--gradient-1);
 }
 
