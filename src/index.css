@@ -105,6 +105,11 @@ textarea:not([rows]) {
   --spacing-600: 3rem;
 
   --std-border-radius: 0.32rem;
+
+  --bg-img-mobile-light: url("/src/assets/images/bg-mobile-light.jpg");
+  --bg-img-desktop-light: url("/src/assets/images/bg-desktop-light.jpg");
+  --bg-img-mobile-dark: url("/src/assets/images/bg-mobile-dark.jpg");
+  --bg-img-desktop-dark: url("/src/assets/images/bg-desktop-dark.jpg");
 }
 
 body {
@@ -119,7 +124,6 @@ body {
 
 :root[data-theme="light"] {
   --bg-color: var(--clr-gray-50);
-  --header-gradient: var(--gradient-1);
 
   --todo-bg-color: var(--clr-white);
   --text-color: var(--clr-navy-850);
@@ -133,4 +137,7 @@ body {
   --footer-text-active-color: var(--clr-blue-500);
 
   --shadow: 0 2rem 3rem hsl(var(--clr-purple-300) / 0.5);
+  
+  --bg-img-mobile: var(--bg-img-mobile-light);
+  --bg-img-desktop: var(--bg-img-desktop-light);
 }

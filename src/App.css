@@ -1,8 +1,9 @@
 /* Background Image */
 
 body {
-  background-image: url("/src/assets/images/bg-mobile-light.jpg");
+  background-image: var(--bg-img-mobile);
   background-size: contain;
   background-position: top left;
   background-repeat: no-repeat;
+  background-color: var(--bg-color);
 }
