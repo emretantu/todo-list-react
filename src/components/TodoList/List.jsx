@@ -8,10 +8,10 @@ const List = ({ todos, onCheckClick, onDeleteClick, onClearCompleted }) => {
       <ul className={styles.list}>
         {
           todos.map(
-            (todo, index) =>
+            (todo) =>
             <Todo 
-              key={index}
-              id={index}
+              key={todo.id}
+              id={todo.id}
               todoText={todo.todoText}
               isDone={todo.isDone}
               onCheckClick={onCheckClick}
