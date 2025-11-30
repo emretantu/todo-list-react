@@ -1,0 +1,26 @@
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-200);
+  padding: var(--spacing-200);
+  background-color: hsl(var(--todo-bg-color));
+  border-radius: var(--std-border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.filter a {
+  color: hsl(var(--footer-text-color));
+  font-weight: bold;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.filter a:not(.active):hover {
+  color: hsl(var(--footer-text-hover-color));
+}
+
+a.active, .filter a:active {
+  color: hsl(var(--footer-text-active-color));
+}

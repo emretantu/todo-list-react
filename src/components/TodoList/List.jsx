@@ -2,9 +2,9 @@ import Todo from "./Todo";
 import styles from "./List.module.css";
 import ListFooter from "./ListFooter";
 
-const List = ({ todos, onCheckClick, onDeleteClick, onClearCompleted }) => {
+const List = ({ todos, onCheckClick, onDeleteClick, onClearCompleted, leftItemsCount }) => {
   return (
-    <div className={styles.listContainer}>
+    <section className={styles.listContainer}>
       <ul className={styles.list}>
         {
           todos.map(
@@ -20,8 +20,8 @@ const List = ({ todos, onCheckClick, onDeleteClick, onClearCompleted }) => {
           )
         }
       </ul>
-      <ListFooter onClearCompleted={onClearCompleted} todos={todos} />
-    </div>
+      <ListFooter onClearCompleted={onClearCompleted} leftItemsCount={leftItemsCount} />
+    </section>
   )
 }
 

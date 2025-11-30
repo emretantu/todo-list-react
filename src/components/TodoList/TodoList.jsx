@@ -3,6 +3,7 @@ import styles from "./TodoList.module.css";
 import List from "./List";
 import NewTodo from "./NewTodo";
 import { v4 as uuidv4 } from 'uuid';
+import Filter from "./Filter";
 
 const TodoList = () => {
 
@@ -12,7 +13,7 @@ const TodoList = () => {
     {id: uuidv4(), todoText: "Jog around the park 3x", isDone: false}
   ])
 
-  // const [filter, setFilter] = useState("All");
+  const [filter, setFilter] = useState("All");
 
   const handleAddTodo = (todoText) => {
     setTodos(prevTodos => [...prevTodos, {id: uuidv4(), todoText: todoText, isDone: false}])
@@ -34,23 +35,29 @@ const TodoList = () => {
     setTodos(prevTodos => prevTodos.filter(todo => todo.isDone === false))
   }
 
-  // const handleFilterChange = (filter) => {
-  //   setFilter(filter);
-  // }
+  const handleFilterChange = (filter) => {
+    setFilter(filter);
+  }
+
+  const filteredTodos = () => {
+    switch (filter) {
+      case "All": return todos;
+      case "Active": return todos.filter(todo => todo.isDone === false);
+      case "Completed": return todos.filter(todo => todo.isDone === true);
+    }
+  }
 
   return (
     <article className={styles.todoList}>
-      <section className={styles.newTodoContainer}>
         <NewTodo onAddTodo={handleAddTodo} />
-      </section>
-      <section className={styles.listContainer}>
         <List
-          todos={todos}
+          todos={filteredTodos()}
           onCheckClick={handleCheckClick}
           onDeleteClick={handleDeleteClick}
           onClearCompleted={handleClearCompleted}
+          leftItemsCount={todos.reduce((acc, curr) => curr.isDone === false ? ++acc : acc, 0)}
         />
-      </section>
+        <Filter filter={filter} onFilterChange={handleFilterChange} />
     </article>
   )
 };

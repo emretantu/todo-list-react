@@ -25,7 +25,7 @@ const NewTodo = ({ onAddTodo }) => {
   }
 
   return (
-    <div className={styles.newTodo} onClick={handleClick}>
+    <section className={styles.newTodo} onClick={handleClick}>
       <label htmlFor="newTodoInput">
         <StylishCheckbox isDone={false} isHovered={isFocused} />
       </label>
@@ -43,7 +43,7 @@ const NewTodo = ({ onAddTodo }) => {
         onBlur={() => setIsFocused(false)}
         autoFocus
       />
-    </div>
+    </section>
   )
 
 }

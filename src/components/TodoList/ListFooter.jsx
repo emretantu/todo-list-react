@@ -1,8 +1,6 @@
 import styles from "./ListFooter.module.css";
 
-const ListFooter = ({ onClearCompleted, todos, children }) => {
-
-  const leftItemsCount = todos.reduce((acc, curr) => curr.isDone === false ? ++acc : acc, 0);
+const ListFooter = ({ onClearCompleted, leftItemsCount, children }) => {
 
   return (
     <div className={styles.listFooter}>
