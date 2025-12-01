@@ -2,7 +2,9 @@ import styles from "./Logo.module.css"
 
 const Logo = () => {
   return (
-    <div>Logo</div>
+    <a href="/">
+      <img className={styles.logo} src="src/assets/images/logo-mobile.png" alt="Mobile Logo" />
+    </a>
   )
 }
 
