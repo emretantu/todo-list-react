@@ -141,3 +141,23 @@ body {
   --bg-img-mobile: var(--bg-img-mobile-light);
   --bg-img-desktop: var(--bg-img-desktop-light);
 }
+
+:root[data-theme="dark"] {
+  --bg-color: var(--clr-navy-950);
+
+  --todo-bg-color: var(--clr-navy-900);
+  --text-color: var(--clr-purple-100);
+  --checked-text-color: var(--clr-purple-700);
+  --unchecked-checkbox-color: var(--clr-purple-800);
+
+  --list-divider-color: var(--clr-purple-800);
+
+  --footer-text-color: var(--clr-purple-600);
+  --footer-text-hover-color: var(--clr-purple-300);
+  --footer-text-active-color: var(--clr-blue-500);
+
+  --shadow: 0 2rem 3rem hsl(var(--clr-black) / 0.5);
+  
+  --bg-img-mobile: var(--bg-img-mobile-dark);
+  --bg-img-desktop: var(--bg-img-desktop-dark);
+}
