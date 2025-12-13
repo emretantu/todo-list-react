@@ -1,12 +1,11 @@
 import {createContext, useContext, useEffect, useState } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 const ThemeContext = createContext(null);
 
 export const ThemeProvider = ({ children }) => {
 
-  // ALL LOGIC IS HERE
-
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useLocalStorage("theme", "light");
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
