@@ -1,0 +1,15 @@
+.themeSwitcher {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.themeSwitcher img {
+  user-select: none;
+  user-drag: none;
+  -webkit-user-drag: none;
+}
