@@ -16,8 +16,6 @@ export const useLocalStorage = (key, initialValue) => {
     }
   });
 
-  
-
   const setValue = useCallback((value) => {
     setStoredValue(prevStoredValue => {
       const valueToStore = value instanceof Function ? value(prevStoredValue) : value;

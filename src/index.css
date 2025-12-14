@@ -122,6 +122,15 @@ body {
 
 /* Dark Light Theme Styles */
 
+body.in-transition,
+body.in-transition *,
+body.in-transition *::before,
+body.in-transition *::after {
+  transition-property: background-color, color, border-color, box-shadow, text-decoration-color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: ease-out;
+}
+
 :root[data-theme="light"] {
   --bg-color: var(--clr-gray-50);
 

@@ -1,4 +1,4 @@
-import {createContext, useCallback, useContext, useEffect, useMemo } from "react";
+import {createContext, useCallback, useContext, useEffect, useMemo, useRef } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
 const ThemeContext = createContext(null);
@@ -14,8 +14,19 @@ export const ThemeProvider = ({ children }) => {
     document.documentElement.dataset.theme = theme;
   }, [theme]);
 
+  const timeoutRef = useRef(null);
+
   const toggleTheme = useCallback(() => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    document.body.classList.add("in-transition");
+    const cleanup = () => {
+      document.body.classList.remove("in-transition");
+    }
+    document.body.addEventListener("transitionend", cleanup, {once: true})
     setTheme(prevTheme => prevTheme === "light" ? "dark" : "light");
+    timeoutRef.current = setTimeout(cleanup, 250);
   }, [setTheme]);
 
   const value = useMemo(() => ({theme, toggleTheme}), [theme]);
