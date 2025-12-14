@@ -12,7 +12,7 @@ export const ThemeProvider = ({ children }) => {
   }, [theme]);
 
   const toggleTheme = useCallback(() => {
-    theme === "light" ? setTheme("dark") : setTheme("light");
+    setTheme(prevTheme => prevTheme === "light" ? "dark" : "light");
   }, [setTheme]);
 
   const value = useMemo(() => ({theme, toggleTheme}), [theme]);
