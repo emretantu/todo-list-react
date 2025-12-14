@@ -4,14 +4,11 @@ import List from "./List";
 import NewTodo from "./NewTodo";
 import { v4 as uuidv4 } from 'uuid';
 import Filter from "./Filter";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 const TodoList = () => {
 
-  const [todos, setTodos] = useState([
-    {id: uuidv4(), todoText: "Lorem ipsum", isDone: false},
-    {id: uuidv4(), todoText: "Lorem ipsum sit amet", isDone: true},
-    {id: uuidv4(), todoText: "Jog around the park 3x", isDone: false}
-  ])
+  const [todos, setTodos] = useLocalStorage("todos", []);
 
   const [filter, setFilter] = useState("All");
 
