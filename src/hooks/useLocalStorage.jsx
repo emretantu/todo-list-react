@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 
 export const useLocalStorage = (key, initialValue) => {
   
@@ -15,7 +15,7 @@ export const useLocalStorage = (key, initialValue) => {
     }
   });
 
-  const setValue = (value) => {
+  const setValue = useCallback((value) => {
     try {
       const valueToStore = value instanceof Function ? value(storedValue) : value;
       setStoredValue(valueToStore);
@@ -25,7 +25,7 @@ export const useLocalStorage = (key, initialValue) => {
     } catch (error) {
       console.log(error);
     }
-  }
+  }, [setStoredValue]);
 
   useEffect(() => {
     const handleStorageChange = (e) => {
