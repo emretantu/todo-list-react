@@ -1,4 +1,4 @@
-import {createContext, useContext, useEffect, useState } from "react";
+import {createContext, useCallback, useContext, useEffect, useMemo } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
 const ThemeContext = createContext(null);
@@ -11,14 +11,11 @@ export const ThemeProvider = ({ children }) => {
     document.documentElement.dataset.theme = theme;
   }, [theme]);
 
-  const toggleTheme = () => {
+  const toggleTheme = useCallback(() => {
     theme === "light" ? setTheme("dark") : setTheme("light");
-  }
+  }, [setTheme]);
 
-  const value = {
-    theme,
-    toggleTheme
-  }
+  const value = useMemo(() => ({theme, toggleTheme}), [theme]);
 
   return (
     <ThemeContext.Provider value={value}>
@@ -29,7 +26,7 @@ export const ThemeProvider = ({ children }) => {
 
 export const useTheme = () => {
   const context = useContext(ThemeContext);
-  if (context.value === null) {
+  if (context === null) {
     throw new Error("useTheme must be used within a ThemeProvider");
   }
   return context;
