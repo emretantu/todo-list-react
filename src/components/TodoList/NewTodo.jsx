@@ -49,6 +49,3 @@ const NewTodo = ({ onAddTodo }) => {
 }
 
 export default NewTodo
-
-
-// Focus input when click entire area.

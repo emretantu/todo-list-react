@@ -4,6 +4,7 @@ import StylishCheckbox from "./StylishCheckbox";
 import styles from "./Todo.module.css";
 
 const Todo = ({ id, todoText, isDone, onCheckClick, onDeleteClick }) => {
+  console.log(todoText)
 
   const [isHovered, setIsHovered] = useState(false);
 

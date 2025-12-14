@@ -16,7 +16,10 @@ const TodoList = () => {
   const [filter, setFilter] = useState("All");
 
   const handleAddTodo = (todoText) => {
-    setTodos(prevTodos => [...prevTodos, {id: uuidv4(), todoText: todoText, isDone: false}])
+    const trimmedText = todoText.replace(/\s+/g, ' ').trim();
+    if (trimmedText) {
+      setTodos(prevTodos => [...prevTodos, {id: uuidv4(), todoText: trimmedText, isDone: false}])
+    }
   }
 
   const handleCheckClick = (id) => {

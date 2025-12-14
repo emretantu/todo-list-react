@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: var(--spacing-200);
   padding: var(--spacing-200);
 }
 
@@ -10,8 +11,10 @@
 }
 
 .todo {
-  display: flex;
+  display: grid;
+  grid-template-columns: min-content 1fr;
   align-items: center;
+  flex: 1;
   gap: var(--spacing-200);
 }
 
@@ -36,6 +39,9 @@
 .todoText {
   font-size: 0.75rem;
   color: hsl(var(--text-color));
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .todoText.done {
