@@ -5,7 +5,10 @@ const ThemeContext = createContext(null);
 
 export const ThemeProvider = ({ children }) => {
 
-  const [theme, setTheme] = useLocalStorage("theme", "light");
+  const [theme, setTheme] = useLocalStorage("theme", () => {
+    const isDarkPreferred = window.matchMedia("(prefers-color-scheme : dark)").matches;
+    return isDarkPreferred ? "dark" : "light";
+  });
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
