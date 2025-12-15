@@ -1,10 +1,14 @@
 import { useState } from "react";
 import styles from "./TodoList.module.css";
+
+import { v4 as uuidv4 } from 'uuid';
+
 import List from "./List";
 import NewTodo from "./NewTodo";
-import { v4 as uuidv4 } from 'uuid';
 import Filter from "./Filter";
+
 import { useLocalStorage } from "../../hooks/useLocalStorage";
+import { useIsMobile } from "../../hooks/useIsMobile";
 
 const TodoList = () => {
 

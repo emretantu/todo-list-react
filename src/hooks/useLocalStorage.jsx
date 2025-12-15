@@ -48,3 +48,11 @@ export const useLocalStorage = (key, initialValue) => {
   return [storedValue, setValue];
 
 }
+
+/*
+  FURTHER IMPLEMENTATION
+  useLocalStorage(key, initialValue, {
+    persistInitial?: boolean; // default false
+    syncAcrossTabs?: boolean; // default true
+  })
+*/
