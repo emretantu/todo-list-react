@@ -2,8 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: var(--spacing-200);
-  padding: var(--spacing-200);
+  gap: var(--spacing-300);
+  padding: var(--spacing-300);
 }
 
 .todoItem * {
@@ -15,7 +15,7 @@
   grid-template-columns: min-content 1fr;
   align-items: center;
   flex: 1;
-  gap: var(--spacing-200);
+  gap: var(--spacing-300);
 }
 
 .todoItem input {
@@ -32,16 +32,17 @@
 }
 
 .crossIcon {
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 1.125rem;
+  height: 1.125rem;
 }
 
 .todoText {
-  font-size: 0.75rem;
+  font-size: 1.125rem;
   color: hsl(var(--text-color));
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding: 0.2rem 0 0 0;
 }
 
 .todoText.done {
@@ -52,4 +53,24 @@
 .divider {
   border: none;
   border-bottom: 1px solid hsl(var(--list-divider-color));
+}
+
+@media (max-width: 767px) {
+  .todoItem {
+    gap: var(--spacing-200);
+    padding: var(--spacing-200);
+  }
+
+  .todoText {
+    font-size: 0.75rem;
+  }
+
+  .todo {
+    gap: var(--spacing-200);
+  }
+
+  .crossIcon {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
 }

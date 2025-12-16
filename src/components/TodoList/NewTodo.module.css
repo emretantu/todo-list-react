@@ -1,8 +1,8 @@
 .newTodo {
   display: flex;
   align-items: stretch;
-  gap: var(--spacing-200);
-  padding: var(--spacing-200);
+  gap: var(--spacing-300);
+  padding: var(--spacing-250) var(--spacing-300);
   cursor: text;
   background-color: hsl(var(--todo-bg-color));
   border-radius: var(--std-border-radius);
@@ -17,7 +17,7 @@
 .newTodoInput {
   border: none;
   outline: none;
-  padding: 0.1rem 0 0 0;
+  padding: 0.2rem 0 0 0;
   flex-grow: 1;
   background-color: transparent;
 
@@ -27,6 +27,17 @@
   font-family: inherit; /* Default */
   font-weight: inherit;
   letter-spacing: inherit;
-  font-size: 0.75rem;
+  font-size: 1.125rem;
   line-height: 1;
+}
+
+@media (max-width: 767px) {
+  .newTodo {
+    gap: var(--spacing-200);
+    padding: var(--spacing-200);
+  }
+
+  .newTodoInput {
+    font-size: 0.75rem;
+  }
 }

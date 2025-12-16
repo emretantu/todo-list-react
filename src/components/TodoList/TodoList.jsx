@@ -5,10 +5,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 import List from "./List";
 import NewTodo from "./NewTodo";
-import Filter from "./Filter";
 
 import { useLocalStorage } from "../../hooks/useLocalStorage";
-import { useIsMobile } from "../../hooks/useIsMobile";
 
 const TodoList = () => {
 
@@ -60,8 +58,9 @@ const TodoList = () => {
           onDeleteClick={handleDeleteClick}
           onClearCompleted={handleClearCompleted}
           leftItemsCount={todos.reduce((acc, curr) => curr.isDone === false ? ++acc : acc, 0)}
+          filter={filter}
+          onFilterChange={handleFilterChange}
         />
-        <Filter filter={filter} onFilterChange={handleFilterChange} />
     </article>
   )
 };

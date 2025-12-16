@@ -1,9 +1,24 @@
 /* Background Image */
 
-body {
-  background-image: var(--bg-img-mobile);
-  background-size: contain;
-  background-position: top left;
+.app-container {
+  background-image: var(--bg-img-desktop);
+  height: 18.75rem;
+  background-size: cover;
+  background-position: top center;
   background-repeat: no-repeat;
   background-color: hsl(var(--bg-color));
+  padding: 0 var(--spacing-300);
+}
+
+.app-container > * {
+  max-width: 33.75rem;
+  margin: auto;
+}
+
+
+@media (max-width: 767px) {
+  .app-container {
+    background-image: var(--bg-img-mobile);
+    height: 12.5rem;
+  }
 }

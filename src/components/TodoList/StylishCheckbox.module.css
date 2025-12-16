@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  --size: 1.25rem;
+  --size: 1.5rem;
   --border: 0.07rem;
   position: relative;
   width: var(--size);
@@ -28,4 +28,10 @@
 
 .customCheckbox.done::before {
   display: none;
+}
+
+@media (max-width: 767px) {
+  .customCheckbox {
+    --size: 1.25rem;
+  }
 }

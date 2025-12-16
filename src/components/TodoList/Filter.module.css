@@ -3,11 +3,7 @@
   justify-content: center;
   align-items: center;
   gap: var(--spacing-200);
-  padding: var(--spacing-200);
-  background-color: hsl(var(--todo-bg-color));
-  border-radius: var(--std-border-radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
+  padding: 0;
 }
 
 .filter a {
@@ -23,4 +19,14 @@
 
 a.active, .filter a:active {
   color: hsl(var(--footer-text-active-color));
+}
+
+@media (max-width: 767px) {
+    .filter {
+      background-color: hsl(var(--todo-bg-color));
+      border-radius: var(--std-border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      padding: var(--spacing-200);
+    }
 }

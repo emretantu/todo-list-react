@@ -6,8 +6,10 @@ import { ThemeProvider } from "./context/ThemeContext";
 const App = () => {
   return (
     <ThemeProvider>
-      <Header />
-      <TodoList />
+      <div className="app-container">
+        <Header />
+        <TodoList />
+      </div>
     </ThemeProvider>
   )
 }

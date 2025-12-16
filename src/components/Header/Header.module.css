@@ -2,5 +2,5 @@
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  padding: var(--spacing-500) var(--spacing-200);
+  padding: var(--spacing-500) 0;
 }

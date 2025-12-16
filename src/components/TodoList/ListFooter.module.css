@@ -2,9 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-200);
+  gap: var(--spacing-200);
+  padding: var(--spacing-300);
 
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   color: hsl(var(--footer-text-color));
   cursor: default;
 }
@@ -19,4 +20,11 @@
 
 .clearButton:active {
   color: hsl(var(--footer-text-active-color))
+}
+
+@media (max-width: 767px) {
+  .listFooter {
+    padding: var(--spacing-200);
+    font-size: 0.75rem;
+  }
 }
