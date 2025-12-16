@@ -1,9 +1,10 @@
 import styles from "./Logo.module.css"
+import logo from "../../assets/images/logo-desktop.png";
 
 const Logo = () => {
   return (
     <a href="/">
-      <img className={styles.logo} src="src/assets/images/logo-mobile.png" alt="Mobile Logo" />
+      <img className={styles.logo} src={logo} alt="Mobile Logo" />
     </a>
   )
 }
