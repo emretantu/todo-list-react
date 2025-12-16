@@ -10,7 +10,7 @@ import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 const TodoList = () => {
 
-  const [todos, setTodos] = useLocalStorage("todos", []);
+  const [todos, setTodos] = useLocalStorage("todos_react", []);
 
   const [filter, setFilter] = useState("All");
 
