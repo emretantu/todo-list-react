@@ -1,12 +1,15 @@
 /* Background Image */
 
+body {
+  background-color: hsl(var(--bg-color));
+}
+
 .app-container {
   background-image: var(--bg-img-desktop);
   height: 18.75rem;
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
-  background-color: hsl(var(--bg-color));
   padding: 0 var(--spacing-300);
 }
 
