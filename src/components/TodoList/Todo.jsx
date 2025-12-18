@@ -2,13 +2,35 @@ import { useState } from "react";
 import CrossIcon from "../../assets/icons/icon-cross.svg";
 import StylishCheckbox from "./StylishCheckbox";
 import styles from "./Todo.module.css";
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 
 const Todo = ({ id, todoText, isDone, onCheckClick, onDeleteClick }) => {
 
   const [isHovered, setIsHovered] = useState(false);
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging
+  } = useSortable({id})
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1
+  }
 
   return (
-    <li className={styles.todoItem}>
+    <li
+      className={styles.todoItem}
+      style={style}
+      ref={setNodeRef}
+      {...listeners}
+      {...attributes}
+    >
 
       <div 
         className={styles.todo}

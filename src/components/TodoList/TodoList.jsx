@@ -7,6 +7,7 @@ import List from "./List";
 import NewTodo from "./NewTodo";
 
 import { useLocalStorage } from "../../hooks/useLocalStorage";
+import { arrayMove } from "@dnd-kit/sortable";
 
 const TodoList = () => {
 
@@ -49,6 +50,14 @@ const TodoList = () => {
     }
   }
 
+  const handleReorder = ({ active, over }) => {
+    const activeIndex = todos.findIndex(todo => todo.id === active.id);
+    const overIndex = todos.findIndex(todo => todo.id === over.id);
+    if (active.id !== over.id) {
+      setTodos(arrayMove(todos, activeIndex, overIndex));
+    }
+  }
+
   return (
     <article className={styles.todoList}>
         <NewTodo onAddTodo={handleAddTodo} />
@@ -60,6 +69,7 @@ const TodoList = () => {
           leftItemsCount={todos.reduce((acc, curr) => curr.isDone === false ? ++acc : acc, 0)}
           filter={filter}
           onFilterChange={handleFilterChange}
+          onReorder={handleReorder}
         />
     </article>
   )

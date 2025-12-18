@@ -6,6 +6,7 @@
   padding: var(--spacing-300);
   background-color: hsl(var(--todo-bg-color));
   margin-bottom: 1px;
+  touch-action: none;
 }
 
 .todoItem * {
