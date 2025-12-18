@@ -1,5 +1,5 @@
 .listContainer {
-  background-color: hsl(var(--todo-bg-color));
+  background-color: hsl(var(--list-divider-color));
   border-radius: var(--std-border-radius);
   overflow: hidden;
   box-shadow: var(--shadow);

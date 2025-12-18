@@ -4,6 +4,7 @@
   align-items: center;
   gap: var(--spacing-200);
   padding: var(--spacing-300);
+  background-color: hsl(var(--todo-bg-color));
 
   font-size: 0.875rem;
   color: hsl(var(--footer-text-color));

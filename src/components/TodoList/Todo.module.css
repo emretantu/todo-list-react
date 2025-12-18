@@ -4,6 +4,8 @@
   align-items: center;
   gap: var(--spacing-300);
   padding: var(--spacing-300);
+  background-color: hsl(var(--todo-bg-color));
+  margin-bottom: 1px;
 }
 
 .todoItem * {
@@ -48,11 +50,6 @@
 .todoText.done {
   text-decoration: line-through;
   color: hsl(var(--checked-text-color));
-}
-
-.divider {
-  border: none;
-  border-bottom: 1px solid hsl(var(--list-divider-color));
 }
 
 @media (max-width: 767px) {
