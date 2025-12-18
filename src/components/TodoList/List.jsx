@@ -7,55 +7,39 @@ import Filter from "./Filter";
 const List = ({ todos, onCheckClick, onDeleteClick, onClearCompleted, leftItemsCount, filter, onFilterChange }) => {
   const isMobile = useIsMobile();
 
-  if (isMobile) {
-
-    return (
-      <>
-        <section className={styles.listContainer}>
-          <ul className={styles.list}>
-            {
-              todos.map(
-                (todo) =>
-                <Todo 
-                  key={todo.id}
-                  id={todo.id}
-                  todoText={todo.todoText}
-                  isDone={todo.isDone}
-                  onCheckClick={onCheckClick}
-                  onDeleteClick={onDeleteClick}
-                />
-              )
-            }
-          </ul>
-          <ListFooter onClearCompleted={onClearCompleted} leftItemsCount={leftItemsCount} />
-        </section>
-        <Filter filter={filter} onFilterChange={onFilterChange} />
-      </>
-    )
-
-  }
-
   return (
-    <section className={styles.listContainer}>
-      <ul className={styles.list}>
+    <>
+      <section className={styles.listContainer}>
+        <ul className={styles.list}>
+          {
+            todos.map(
+              (todo) =>
+              <Todo 
+                key={todo.id}
+                id={todo.id}
+                todoText={todo.todoText}
+                isDone={todo.isDone}
+                onCheckClick={onCheckClick}
+                onDeleteClick={onDeleteClick}
+              />
+            )
+          }
+        </ul>
         {
-          todos.map(
-            (todo) =>
-            <Todo 
-              key={todo.id}
-              id={todo.id}
-              todoText={todo.todoText}
-              isDone={todo.isDone}
-              onCheckClick={onCheckClick}
-              onDeleteClick={onDeleteClick}
-            />
-          )
+          isMobile
+            ? <ListFooter onClearCompleted={onClearCompleted} leftItemsCount={leftItemsCount} />
+            : <ListFooter onClearCompleted={onClearCompleted} leftItemsCount={leftItemsCount}>
+                <Filter filter={filter} onFilterChange={onFilterChange} />
+              </ListFooter>
         }
-      </ul>
-      <ListFooter onClearCompleted={onClearCompleted} leftItemsCount={leftItemsCount}>
-        <Filter filter={filter} onFilterChange={onFilterChange} />
-      </ListFooter>
       </section>
+      {
+        isMobile
+          ? <Filter filter={filter} onFilterChange={onFilterChange} />
+          : ""
+      }
+      
+    </>
   )
 }
 
