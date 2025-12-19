@@ -71,6 +71,7 @@ const TodoList = () => {
           onFilterChange={handleFilterChange}
           onReorder={handleReorder}
         />
+        <p className={styles.dndInfo}>Drag and drop to reorder list</p>
     </article>
   )
 };
