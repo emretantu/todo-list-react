@@ -67,6 +67,7 @@ const List = ({ todos, onCheckClick, onDeleteClick, onClearCompleted, leftItemsC
               <Todo
                 {...activeTodo}
                 style={{borderRadius: "var(--std-border-radius)"}}
+                forceCollapsed={true}
               />
             </DragOverlay>
           </DndContext>

@@ -3,8 +3,8 @@ import CrossIcon from "../../assets/icons/icon-cross.svg";
 import StylishCheckbox from "./StylishCheckbox";
 import styles from "./Todo.module.css";
 
-const Todo = ({ id, todoText, isDone, onCheckClick, onDeleteClick, ...props }) => {
-
+const Todo = ({ id, todoText, isDone, onCheckClick, onDeleteClick, forceCollapsed, ...props }) => {
+  
   const [isHovered, setIsHovered] = useState(false);
 
   const handleClick = (event) => {
@@ -43,7 +43,7 @@ const Todo = ({ id, todoText, isDone, onCheckClick, onDeleteClick, ...props }) =
           readOnly
         />
         <label
-          className={`${styles.todoText} ${isDone ? styles.done : ""} ${isHovered ? styles.hovered : ""}`}
+          className={`${styles.todoText} ${isDone ? styles.done : ""} ${!forceCollapsed && isHovered ? styles.hovered : ""}`}
           htmlFor={"checkbox_"+id}
           onClick={handleClick}
           title={todoText}

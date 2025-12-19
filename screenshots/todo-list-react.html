@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:5173/ -->
+<html lang="en" data-theme="light"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="./todo-list-react_files/client"></script>
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo-list-react</title>
+    <link rel="icon" type="image/svg+xml" href="http://localhost:5173/logo.svg">
+  <style type="text/css" data-vite-dev-id="/Users/emretantu/Desktop/react-practices/todo-list-react/src/index.css">/* CSS Reset */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  margin: 0;
+}
+
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: none;
+  color: currentColor;
+}
+
+img, picture {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Design System */
+
+@font-face {
+  font-family: "Josephin";
+  src: url("/src/assets/fonts/JosefinSans-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Josephin";
+  src: url("/src/assets/fonts/JosefinSans-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --clr-white: 0 100% 100%;
+  --clr-black: 0 0% 0%;
+  --clr-purple-800: 237 14% 26%;
+  --clr-purple-700: 233 14% 35%;
+  --clr-purple-600: 235 16% 43%;
+  --clr-purple-300: 234 39% 85%;
+  --clr-purple-100: 236 33% 92%;
+  --clr-gray-600: 236 9% 61%;
+  --clr-gray-300: 233 11% 84%;
+  --clr-gray-50: 0 0% 98%;
+  --clr-navy-950: 235 21% 11%;
+  --clr-navy-900: 235 24% 19%;
+  --clr-navy-850: 235 19% 35%;
+  --clr-blue-500: 220 98% 61%;
+
+  --gradient-1: linear-gradient(to right bottom, hsl(192 100% 67%), hsl(280 87% 65%));
+  --gradient-2: linear-gradient(to right bottom, hsl(254 85% 40%), hsl(307 64% 39%));
+
+  --spacing-0: 0;
+  --spacing-100: 0.5rem;
+  --spacing-200: 1rem;
+  --spacing-250: 1.25rem;
+  --spacing-300: 1.5rem;
+  --spacing-400: 2rem;
+  --spacing-500: 2.5rem;
+  --spacing-600: 3rem;
+
+  --std-border-radius: 0.32rem;
+
+  --bg-img-mobile-light: url("/src/assets/images/bg-mobile-light.jpg");
+  --bg-img-desktop-light: url("/src/assets/images/bg-desktop-light.jpg");
+  --bg-img-mobile-dark: url("/src/assets/images/bg-mobile-dark.jpg");
+  --bg-img-desktop-dark: url("/src/assets/images/bg-desktop-dark.jpg");
+}
+
+body {
+  font-family: "Josephin", sans-serif;
+  font-weight: normal;
+  letter-spacing: -0.016rem;
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
+/* Dark Light Theme Styles */
+
+body.in-transition,
+body.in-transition *,
+body.in-transition *::before,
+body.in-transition *::after {
+  transition-property: background-color, color, border-color, box-shadow, text-decoration-color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: ease-out;
+}
+
+:root[data-theme="light"] {
+  --bg-color: var(--clr-gray-50);
+
+  --todo-bg-color: var(--clr-white);
+  --text-color: var(--clr-navy-850);
+  --checked-text-color: var(--clr-gray-300);
+  --unchecked-checkbox-color: var(--clr-purple-300);
+
+  --list-divider-color: var(--clr-purple-300);
+
+  --footer-text-color: var(--clr-gray-600);
+  --footer-text-hover-color: var(--clr-navy-850);
+  --footer-text-active-color: var(--clr-blue-500);
+
+  --shadow: 0 2rem 3rem hsl(var(--clr-purple-300) / 0.5);
+  
+  --bg-img-mobile: var(--bg-img-mobile-light);
+  --bg-img-desktop: var(--bg-img-desktop-light);
+}
+
+:root[data-theme="dark"] {
+  --bg-color: var(--clr-navy-950);
+
+  --todo-bg-color: var(--clr-navy-900);
+  --text-color: var(--clr-purple-100);
+  --checked-text-color: var(--clr-purple-700);
+  --unchecked-checkbox-color: var(--clr-purple-800);
+
+  --list-divider-color: var(--clr-purple-800);
+
+  --footer-text-color: var(--clr-purple-600);
+  --footer-text-hover-color: var(--clr-purple-300);
+  --footer-text-active-color: var(--clr-blue-500);
+
+  --shadow: 0 2rem 3rem hsl(var(--clr-black) / 0.5);
+  
+  --bg-img-mobile: var(--bg-img-mobile-dark);
+  --bg-img-desktop: var(--bg-img-desktop-dark);
+}</style><style type="text/css" data-vite-dev-id="/Users/emretantu/Desktop/react-practices/todo-list-react/src/App.css">/* Background Image */
+
+body {
+  background-color: hsl(var(--bg-color));
+}
+
+.app-container {
+  background-image: var(--bg-img-desktop);
+  height: 18.75rem;
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  padding: 0 var(--spacing-300);
+}
+
+.app-container > * {
+  max-width: 33.75rem;
+  margin: auto;
+}
+
+
+@media (max-width: 767px) {
+  .app-container {
+    background-image: var(--bg-img-mobile);
+    height: 12.5rem;
+  }
+}</style><style type="text/css" data-vite-dev-id="/Users/emretantu/Desktop/react-practices/todo-list-react/src/components/Logo/Logo.module.css">._logo_1m0tz_1 {
+  height: 1.875rem;
+}
+
+@media (max-width: 767px) {
+  ._logo_1m0tz_1 {
+    height: 1.25rem;
+  }
+}</style><style type="text/css" data-vite-dev-id="/Users/emretantu/Desktop/react-practices/todo-list-react/src/components/ThemeSwitcher/ThemeSwitcher.module.css">._themeSwitcher_1wnc3_1 {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 1.875rem;
+  height: 1.875rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+._themeSwitcher_1wnc3_1 img {
+  user-select: none;
+  user-drag: none;
+  -webkit-user-drag: none;
+}
+
+@media (max-width: 767px) {
+  ._themeSwitcher_1wnc3_1 {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+}</style><style type="text/css" data-vite-dev-id="/Users/emretantu/Desktop/react-practices/todo-list-react/src/components/Header/Header.module.css">._header_1q9bh_1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: var(--spacing-500) 0;
+}</style><style type="text/css" data-vite-dev-id="/Users/emretantu/Desktop/react-practices/todo-list-react/src/components/TodoList/TodoList.module.css">._todoList_260tu_1 {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-300);
+}
+
+@media (max-width: 767px) {
+  ._todoList_260tu_1 {
+    gap: var(--spacing-200);
+  }
+}</style><style type="text/css" data-vite-dev-id="/Users/emretantu/Desktop/react-practices/todo-list-react/src/components/TodoList/List.module.css">._listContainer_1wljs_1 {
+  background-color: hsl(var(--list-divider-color));
+  border-radius: var(--std-border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+._list_1wljs_1 {
+  padding: 0;
+}</style><style type="text/css" data-vite-dev-id="/Users/emretantu/Desktop/react-practices/todo-list-react/src/components/TodoList/ListFooter.module.css">._listFooter_23z7s_1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-200);
+  padding: var(--spacing-300);
+  background-color: hsl(var(--todo-bg-color));
+
+  font-size: 0.875rem;
+  color: hsl(var(--footer-text-color));
+  cursor: default;
+}
+
+._clearButton_23z7s_14 {
+  cursor: pointer;
+}
+
+._clearButton_23z7s_14:hover {
+  color: hsl(var(--footer-text-hover-color))
+}
+
+._clearButton_23z7s_14:active {
+  color: hsl(var(--footer-text-active-color))
+}
+
+@media (max-width: 767px) {
+  ._listFooter_23z7s_1 {
+    padding: var(--spacing-200);
+    font-size: 0.75rem;
+  }
+}</style><style type="text/css" data-vite-dev-id="/Users/emretantu/Desktop/react-practices/todo-list-react/src/components/TodoList/Filter.module.css">._filter_1xnis_1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-200);
+  padding: 0;
+}
+
+._filter_1xnis_1 a {
+  color: hsl(var(--footer-text-color));
+  font-weight: bold;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+._filter_1xnis_1 a:not(._active_1xnis_16):hover {
+  color: hsl(var(--footer-text-hover-color));
+}
+
+a._active_1xnis_16, ._filter_1xnis_1 a:active {
+  color: hsl(var(--footer-text-active-color));
+}
+
+@media (max-width: 767px) {
+    ._filter_1xnis_1 {
+      background-color: hsl(var(--todo-bg-color));
+      border-radius: var(--std-border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      padding: var(--spacing-200);
+    }
+}</style><style type="text/css" data-vite-dev-id="/Users/emretantu/Desktop/react-practices/todo-list-react/src/components/TodoList/StylishCheckbox.module.css">._customCheckbox_pmfx2_1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --size: 1.5rem;
+  --border: 0.07rem;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 100%;
+  background-color: hsl(var(--unchecked-checkbox-color));
+}
+
+._customCheckbox_pmfx2_1::before {
+  content: "";
+  position: absolute;
+  top: var(--border);
+  left: var(--border);
+  width: calc(var(--size) - calc(var(--border) * 2));
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  background-color: hsl(var(--todo-bg-color));
+}
+
+._hovered_pmfx2_25, ._done_pmfx2_25 {
+  background-image: var(--gradient-1);
+}
+
+._customCheckbox_pmfx2_1._done_pmfx2_25::before {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  ._customCheckbox_pmfx2_1 {
+    --size: 1.25rem;
+  }
+}</style><style type="text/css" data-vite-dev-id="/Users/emretantu/Desktop/react-practices/todo-list-react/src/components/TodoList/Todo.module.css">._todoItem_4dsi5_1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-300);
+  padding: var(--spacing-300);
+  background-color: hsl(var(--todo-bg-color));
+  margin-bottom: 1px;
+  touch-action: none;
+}
+
+._todoItem_4dsi5_1 * {
+  cursor: pointer;
+}
+
+._todo_4dsi5_1 {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
+  flex: 1;
+  gap: var(--spacing-300);
+}
+
+._todoItem_4dsi5_1 input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+._checkIcon_4dsi5_31 {
+  width: 0.7rem;
+  padding-left: 0.07rem;
+  padding-top: 0.07rem;
+}
+
+._crossIcon_4dsi5_37 {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+._todoText_4dsi5_42 {
+  font-size: 1.125rem;
+  color: hsl(var(--text-color));
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0.2rem 0 0 0;
+}
+
+._todoText_4dsi5_42._done_4dsi5_51 {
+  text-decoration: line-through;
+  color: hsl(var(--checked-text-color));
+}
+
+._todoText_4dsi5_42._hovered_4dsi5_56 {
+  white-space: wrap;
+}
+
+@media (max-width: 767px) {
+  ._todoItem_4dsi5_1 {
+    gap: var(--spacing-200);
+    padding: var(--spacing-200);
+  }
+
+  ._todoText_4dsi5_42 {
+    font-size: 0.75rem;
+  }
+
+  ._todo_4dsi5_1 {
+    gap: var(--spacing-200);
+  }
+
+  ._crossIcon_4dsi5_37 {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+}</style><style type="text/css" data-vite-dev-id="/Users/emretantu/Desktop/react-practices/todo-list-react/src/components/TodoList/NewTodo.module.css">._newTodo_fl8pi_1 {
+  display: flex;
+  align-items: stretch;
+  gap: var(--spacing-300);
+  padding: var(--spacing-250) var(--spacing-300);
+  cursor: text;
+  background-color: hsl(var(--todo-bg-color));
+  border-radius: var(--std-border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+._newTodo_fl8pi_1 > label {
+  cursor: inherit;
+}
+
+._newTodoInput_fl8pi_17 {
+  border: none;
+  outline: none;
+  padding: 0.2rem 0 0 0;
+  flex-grow: 1;
+  background-color: transparent;
+
+  color: hsl(var(--text-color));
+  caret-color: hsl(var(--clr-blue-500));
+
+  font-family: inherit; /* Default */
+  font-weight: inherit;
+  letter-spacing: inherit;
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+@media (max-width: 767px) {
+  ._newTodo_fl8pi_1 {
+    gap: var(--spacing-200);
+    padding: var(--spacing-200);
+  }
+
+  ._newTodoInput_fl8pi_17 {
+    font-size: 0.75rem;
+  }
+}</style></head>
+  <body cz-shortcut-listen="true">
+    <div id="root"><div class="app-container"><header class="_header_1q9bh_1"><a href="http://localhost:5173/"><img class="_logo_1m0tz_1" alt="Mobile Logo" src="./todo-list-react_files/logo-desktop.png"></a><button class="_themeSwitcher_1wnc3_1"><img src="data:image/svg+xml,%3csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20width=&#39;26&#39;%20height=&#39;26&#39;%3e%3cpath%20fill=&#39;%23FFF&#39;%20fill-rule=&#39;evenodd&#39;%20d=&#39;M13%200c.81%200%201.603.074%202.373.216C10.593%201.199%207%205.43%207%2010.5%207%2016.299%2011.701%2021%2017.5%2021c2.996%200%205.7-1.255%207.613-3.268C23.22%2022.572%2018.51%2026%2013%2026%205.82%2026%200%2020.18%200%2013S5.82%200%2013%200z&#39;/%3e%3c/svg%3e"></button></header><article class="_todoList_260tu_1"><section class="_newTodo_fl8pi_1"><label for="newTodoInput"><div class="_customCheckbox_pmfx2_1  _hovered_pmfx2_25"></div></label><input id="newTodoInput" class="_newTodoInput_fl8pi_17" placeholder="Create a new todo..." type="text" value="" name="newTodoInput"></section><section class="_listContainer_1wljs_1"><ul class="_list_1wljs_1"><li class="_todoItem_4dsi5_1" role="button" tabindex="0" aria-disabled="false" aria-roledescription="sortable" aria-describedby="DndDescribedBy-0" style="opacity: 1;"><div class="_todo_4dsi5_1"><div class="_customCheckbox_pmfx2_1  _hovered_pmfx2_25"></div><input id="checkbox_fe78f576-60bb-4929-8757-2f6a9f338e7d" readonly="" type="checkbox" name="checkbox_fe78f576-60bb-4929-8757-2f6a9f338e7d"><label class="_todoText_4dsi5_42  _hovered_4dsi5_56" for="checkbox_fe78f576-60bb-4929-8757-2f6a9f338e7d" title="Lorem ipsum dolor sit amet">Lorem ipsum dolor sit amet</label></div><img class="_crossIcon_4dsi5_37" alt="Cross Icon" src="data:image/svg+xml,%3csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20width=&#39;18&#39;%20height=&#39;18&#39;%3e%3cpath%20fill=&#39;%23494C6B&#39;%20fill-rule=&#39;evenodd&#39;%20d=&#39;M16.97%200l.708.707L9.546%208.84l8.132%208.132-.707.707-8.132-8.132-8.132%208.132L0%2016.97l8.132-8.132L0%20.707.707%200%208.84%208.132%2016.971%200z&#39;/%3e%3c/svg%3e"></li><li class="_todoItem_4dsi5_1" role="button" tabindex="0" aria-disabled="false" aria-roledescription="sortable" aria-describedby="DndDescribedBy-0" style="opacity: 1;"><div class="_todo_4dsi5_1"><div class="_customCheckbox_pmfx2_1  _hovered_pmfx2_25"></div><input id="checkbox_606a4aaa-4645-4308-ba6d-0bf0a4140756" readonly="" type="checkbox" name="checkbox_606a4aaa-4645-4308-ba6d-0bf0a4140756"><label class="_todoText_4dsi5_42  _hovered_4dsi5_56" for="checkbox_606a4aaa-4645-4308-ba6d-0bf0a4140756" title="Lorem ipsum dolor">Lorem ipsum dolor</label></div><img class="_crossIcon_4dsi5_37" alt="Cross Icon" src="data:image/svg+xml,%3csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20width=&#39;18&#39;%20height=&#39;18&#39;%3e%3cpath%20fill=&#39;%23494C6B&#39;%20fill-rule=&#39;evenodd&#39;%20d=&#39;M16.97%200l.708.707L9.546%208.84l8.132%208.132-.707.707-8.132-8.132-8.132%208.132L0%2016.97l8.132-8.132L0%20.707.707%200%208.84%208.132%2016.971%200z&#39;/%3e%3c/svg%3e"></li><li class="_todoItem_4dsi5_1" role="button" tabindex="0" aria-disabled="false" aria-roledescription="sortable" aria-describedby="DndDescribedBy-0" style="opacity: 1;"><div class="_todo_4dsi5_1"><div class="_customCheckbox_pmfx2_1 _done_pmfx2_25 _hovered_pmfx2_25"><img alt="Check Icon" src="data:image/svg+xml,%3csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20width=&#39;11&#39;%20height=&#39;9&#39;%3e%3cpath%20fill=&#39;none&#39;%20stroke=&#39;%23FFF&#39;%20stroke-width=&#39;2&#39;%20d=&#39;M1%204.304L3.696%207l6-6&#39;/%3e%3c/svg%3e"></div><input id="checkbox_d762c55d-5e4c-445b-a14e-442c7ced13a5" readonly="" type="checkbox" checked="" name="checkbox_d762c55d-5e4c-445b-a14e-442c7ced13a5"><label class="_todoText_4dsi5_42 _done_4dsi5_51 _hovered_4dsi5_56" for="checkbox_d762c55d-5e4c-445b-a14e-442c7ced13a5" title="Ipsum">Ipsum</label></div><img class="_crossIcon_4dsi5_37" alt="Cross Icon" src="data:image/svg+xml,%3csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20width=&#39;18&#39;%20height=&#39;18&#39;%3e%3cpath%20fill=&#39;%23494C6B&#39;%20fill-rule=&#39;evenodd&#39;%20d=&#39;M16.97%200l.708.707L9.546%208.84l8.132%208.132-.707.707-8.132-8.132-8.132%208.132L0%2016.97l8.132-8.132L0%20.707.707%200%208.84%208.132%2016.971%200z&#39;/%3e%3c/svg%3e"></li><li class="_todoItem_4dsi5_1" role="button" tabindex="0" aria-disabled="false" aria-roledescription="sortable" aria-describedby="DndDescribedBy-0" style="opacity: 1;"><div class="_todo_4dsi5_1"><div class="_customCheckbox_pmfx2_1 _done_pmfx2_25 _hovered_pmfx2_25"><img alt="Check Icon" src="data:image/svg+xml,%3csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20width=&#39;11&#39;%20height=&#39;9&#39;%3e%3cpath%20fill=&#39;none&#39;%20stroke=&#39;%23FFF&#39;%20stroke-width=&#39;2&#39;%20d=&#39;M1%204.304L3.696%207l6-6&#39;/%3e%3c/svg%3e"></div><input id="checkbox_4969a4a9-15fc-4d3c-9ec0-9ad2ab53b898" readonly="" type="checkbox" checked="" name="checkbox_4969a4a9-15fc-4d3c-9ec0-9ad2ab53b898"><label class="_todoText_4dsi5_42 _done_4dsi5_51 _hovered_4dsi5_56" for="checkbox_4969a4a9-15fc-4d3c-9ec0-9ad2ab53b898" title="Lorem">Lorem</label></div><img class="_crossIcon_4dsi5_37" alt="Cross Icon" src="data:image/svg+xml,%3csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20width=&#39;18&#39;%20height=&#39;18&#39;%3e%3cpath%20fill=&#39;%23494C6B&#39;%20fill-rule=&#39;evenodd&#39;%20d=&#39;M16.97%200l.708.707L9.546%208.84l8.132%208.132-.707.707-8.132-8.132-8.132%208.132L0%2016.97l8.132-8.132L0%20.707.707%200%208.84%208.132%2016.971%200z&#39;/%3e%3c/svg%3e"></li><li class="_todoItem_4dsi5_1" role="button" tabindex="0" aria-disabled="false" aria-roledescription="sortable" aria-describedby="DndDescribedBy-0" style="opacity: 1;"><div class="_todo_4dsi5_1"><div class="_customCheckbox_pmfx2_1  _hovered_pmfx2_25"></div><input id="checkbox_1da40e35-fe05-4854-9091-1d7c35e01ad9" readonly="" type="checkbox" name="checkbox_1da40e35-fe05-4854-9091-1d7c35e01ad9"><label class="_todoText_4dsi5_42  _hovered_4dsi5_56" for="checkbox_1da40e35-fe05-4854-9091-1d7c35e01ad9" title="Dolor">Dolor</label></div><img class="_crossIcon_4dsi5_37" alt="Cross Icon" src="data:image/svg+xml,%3csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20width=&#39;18&#39;%20height=&#39;18&#39;%3e%3cpath%20fill=&#39;%23494C6B&#39;%20fill-rule=&#39;evenodd&#39;%20d=&#39;M16.97%200l.708.707L9.546%208.84l8.132%208.132-.707.707-8.132-8.132-8.132%208.132L0%2016.97l8.132-8.132L0%20.707.707%200%208.84%208.132%2016.971%200z&#39;/%3e%3c/svg%3e"></li><li class="_todoItem_4dsi5_1" role="button" tabindex="0" aria-disabled="false" aria-roledescription="sortable" aria-describedby="DndDescribedBy-0" style="opacity: 1;"><div class="_todo_4dsi5_1"><div class="_customCheckbox_pmfx2_1  _hovered_pmfx2_25"></div><input id="checkbox_49bcd3a8-f81c-4f38-b070-661264429d71" readonly="" type="checkbox" name="checkbox_49bcd3a8-f81c-4f38-b070-661264429d71"><label class="_todoText_4dsi5_42  _hovered_4dsi5_56" for="checkbox_49bcd3a8-f81c-4f38-b070-661264429d71" title="sldfj sldkf jsdlf ksjdf lsdkjf lsdkjf lsjdlkjlkjlkj sdlkfj sldkjfsl jailskdjflksjdflksjlfk jslkdjfl skdjf">sldfj sldkf jsdlf ksjdf lsdkjf lsdkjf lsjdlkjlkjlkj sdlkfj sldkjfsl jailskdjflksjdflksjlfk jslkdjfl skdjf</label></div><img class="_crossIcon_4dsi5_37" alt="Cross Icon" src="data:image/svg+xml,%3csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20width=&#39;18&#39;%20height=&#39;18&#39;%3e%3cpath%20fill=&#39;%23494C6B&#39;%20fill-rule=&#39;evenodd&#39;%20d=&#39;M16.97%200l.708.707L9.546%208.84l8.132%208.132-.707.707-8.132-8.132-8.132%208.132L0%2016.97l8.132-8.132L0%20.707.707%200%208.84%208.132%2016.971%200z&#39;/%3e%3c/svg%3e"></li><li class="_todoItem_4dsi5_1" role="button" tabindex="0" aria-disabled="false" aria-roledescription="sortable" aria-describedby="DndDescribedBy-0" style="opacity: 1;"><div class="_todo_4dsi5_1"><div class="_customCheckbox_pmfx2_1  _hovered_pmfx2_25"></div><input id="checkbox_33859999-73c2-44f6-90bb-7cfd77e15375" readonly="" type="checkbox" name="checkbox_33859999-73c2-44f6-90bb-7cfd77e15375"><label class="_todoText_4dsi5_42  _hovered_4dsi5_56" for="checkbox_33859999-73c2-44f6-90bb-7cfd77e15375" title="Sit amet">Sit amet</label></div><img class="_crossIcon_4dsi5_37" alt="Cross Icon" src="data:image/svg+xml,%3csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20width=&#39;18&#39;%20height=&#39;18&#39;%3e%3cpath%20fill=&#39;%23494C6B&#39;%20fill-rule=&#39;evenodd&#39;%20d=&#39;M16.97%200l.708.707L9.546%208.84l8.132%208.132-.707.707-8.132-8.132-8.132%208.132L0%2016.97l8.132-8.132L0%20.707.707%200%208.84%208.132%2016.971%200z&#39;/%3e%3c/svg%3e"></li><li class="_todoItem_4dsi5_1" role="button" tabindex="0" aria-disabled="false" aria-roledescription="sortable" aria-describedby="DndDescribedBy-0" style="opacity: 1;"><div class="_todo_4dsi5_1"><div class="_customCheckbox_pmfx2_1  _hovered_pmfx2_25"></div><input id="checkbox_9516ec73-e5df-45f0-ad37-5c3773f14d9e" readonly="" type="checkbox" name="checkbox_9516ec73-e5df-45f0-ad37-5c3773f14d9e"><label class="_todoText_4dsi5_42  _hovered_4dsi5_56" for="checkbox_9516ec73-e5df-45f0-ad37-5c3773f14d9e" title="TEst">TEst</label></div><img class="_crossIcon_4dsi5_37" alt="Cross Icon" src="data:image/svg+xml,%3csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20width=&#39;18&#39;%20height=&#39;18&#39;%3e%3cpath%20fill=&#39;%23494C6B&#39;%20fill-rule=&#39;evenodd&#39;%20d=&#39;M16.97%200l.708.707L9.546%208.84l8.132%208.132-.707.707-8.132-8.132-8.132%208.132L0%2016.97l8.132-8.132L0%20.707.707%200%208.84%208.132%2016.971%200z&#39;/%3e%3c/svg%3e"></li><li class="_todoItem_4dsi5_1" role="button" tabindex="0" aria-disabled="false" aria-roledescription="sortable" aria-describedby="DndDescribedBy-0" style="opacity: 1;"><div class="_todo_4dsi5_1"><div class="_customCheckbox_pmfx2_1  _hovered_pmfx2_25"></div><input id="checkbox_3378724e-238d-4c78-b5f2-0114fe379d11" readonly="" type="checkbox" name="checkbox_3378724e-238d-4c78-b5f2-0114fe379d11"><label class="_todoText_4dsi5_42  _hovered_4dsi5_56" for="checkbox_3378724e-238d-4c78-b5f2-0114fe379d11" title="Test">Test</label></div><img class="_crossIcon_4dsi5_37" alt="Cross Icon" src="data:image/svg+xml,%3csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20width=&#39;18&#39;%20height=&#39;18&#39;%3e%3cpath%20fill=&#39;%23494C6B&#39;%20fill-rule=&#39;evenodd&#39;%20d=&#39;M16.97%200l.708.707L9.546%208.84l8.132%208.132-.707.707-8.132-8.132-8.132%208.132L0%2016.97l8.132-8.132L0%20.707.707%200%208.84%208.132%2016.971%200z&#39;/%3e%3c/svg%3e"></li><li class="_todoItem_4dsi5_1" role="button" tabindex="0" aria-disabled="false" aria-roledescription="sortable" aria-describedby="DndDescribedBy-0" style="opacity: 1;"><div class="_todo_4dsi5_1"><div class="_customCheckbox_pmfx2_1  _hovered_pmfx2_25"></div><input id="checkbox_067272fd-d92a-4fef-b79c-f8c8fa37f494" readonly="" type="checkbox" name="checkbox_067272fd-d92a-4fef-b79c-f8c8fa37f494"><label class="_todoText_4dsi5_42  _hovered_4dsi5_56" for="checkbox_067272fd-d92a-4fef-b79c-f8c8fa37f494" title="tttt">tttt</label></div><img class="_crossIcon_4dsi5_37" alt="Cross Icon" src="data:image/svg+xml,%3csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20width=&#39;18&#39;%20height=&#39;18&#39;%3e%3cpath%20fill=&#39;%23494C6B&#39;%20fill-rule=&#39;evenodd&#39;%20d=&#39;M16.97%200l.708.707L9.546%208.84l8.132%208.132-.707.707-8.132-8.132-8.132%208.132L0%2016.97l8.132-8.132L0%20.707.707%200%208.84%208.132%2016.971%200z&#39;/%3e%3c/svg%3e"></li><div id="DndDescribedBy-0" style="display: none;">
+    To pick up a draggable item, press the space bar.
+    While dragging, use the arrow keys to move the item.
+    Press space again to drop the item in its new position, or press escape to cancel.
+  </div><div id="DndLiveRegion-0" role="status" aria-live="assertive" aria-atomic="true" style="position: fixed; top: 0px; left: 0px; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(100%); white-space: nowrap;"></div></ul><div class="_listFooter_23z7s_1"><p>8 Items Left</p><div class="_filter_1xnis_1"><a class="_active_1xnis_16">All</a><a class="">Active</a><a class="">Completed</a></div><a class="_clearButton_23z7s_14">Clear Completed</a></div></section></article><p style="text-align: center; color: hsl(var(--footer-text-color)); padding: 2rem 0px;">Drag and drop to reorder list</p></div></div>
+    <script type="module" src="./todo-list-react_files/main.jsx"></script>
+  
+
+</body></html>
