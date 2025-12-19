@@ -4,11 +4,6 @@
     gap: var(--spacing-300);
 }
 
-.dndInfo {
-    text-align: center;
-    color: hsl(var(--footer-text-color));
-}
-
 @media (max-width: 767px) {
   .todoList {
     gap: var(--spacing-200);

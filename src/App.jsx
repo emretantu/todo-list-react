@@ -9,6 +9,15 @@ const App = () => {
       <div className="app-container">
         <Header />
         <TodoList />
+        <p
+          style={{
+            textAlign: "center",
+            color: "hsl(var(--footer-text-color))",
+            padding: "2rem 0"
+          }}
+        >
+          Drag and drop to reorder list
+        </p>
       </div>
     </ThemeProvider>
   )
