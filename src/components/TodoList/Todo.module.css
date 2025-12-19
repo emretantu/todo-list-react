@@ -53,6 +53,10 @@
   color: hsl(var(--checked-text-color));
 }
 
+.todoText.hovered {
+  white-space: wrap;
+}
+
 @media (max-width: 767px) {
   .todoItem {
     gap: var(--spacing-200);
