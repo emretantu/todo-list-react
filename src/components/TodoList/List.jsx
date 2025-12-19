@@ -10,7 +10,11 @@ const List = ({ todos, onCheckClick, onDeleteClick, onClearCompleted, leftItemsC
   const isMobile = useIsMobile();
 
   const sensors = useSensors(
-    useSensor(PointerSensor),
+    useSensor(PointerSensor, {
+      activationConstraint: {
+        distance: 8
+      }
+    }),
     useSensor(KeyboardSensor, {
       sortableKeyboardCoordinates
     })
